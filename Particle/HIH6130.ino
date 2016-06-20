@@ -10,7 +10,7 @@
 // HIH6130 I2C address is 0x27(39)
 #define Addr 0x27
 
-float cTemp = 0.0, fTemp = 0.0, humidity = 0.0;
+double cTemp = 0.0, fTemp = 0.0, humidity = 0.0;
 int temp = 0;
 
 void setup()
@@ -57,7 +57,9 @@ void loop()
 
   // Output data to dashboard
   Particle.publish("Relative Humidity : ", String(humidity));
+  delay(1000);
   Particle.publish("Temperature in Celsius : ", String(cTemp));
+  delay(1000);
   Particle.publish("Temperature in Fahrenheit : ", String(fTemp));
   delay(1000);
 }
