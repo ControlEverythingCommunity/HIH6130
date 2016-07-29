@@ -29,7 +29,7 @@ void main()
 	char data[4] = {0};
 	if(read(file, data, 4) != 4)
 	{
-		printf("Erorr : Input/output Erorr \n");
+		printf("Error : Input/Output error \n");
 	}
 	else
 	{
@@ -42,6 +42,6 @@ void main()
 		// Output data to screen
 		printf("Relative Humidity : %.2f RH \n", humidity);
 		printf("Temperature in Celsius : %.2f C \n", cTemp);
-		printf("Temperature in Farhenheit : %.2f F \n", fTemp);
+		printf("Temperature in Fahrenheit : %.2f F \n", fTemp);
 	}
 }
