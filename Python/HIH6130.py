@@ -10,6 +10,9 @@ import time
 # Get I2C bus
 bus = smbus.SMBus(1)
 
+bus.write_quick(0x27)
+time.sleep(0.1)
+
 # HIH6130 address, 0x27(39)
 # Read data back from 0x00(00), 4 bytes
 # humidity MSB, humidity LSB, temp MSB, temp LSB
