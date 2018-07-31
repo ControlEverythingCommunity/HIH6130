@@ -23,6 +23,15 @@ void main()
 	// Get I2C device, HIH6130 I2C address is 0x27(39)
 	ioctl(file, I2C_SLAVE, 0x27);
 	sleep(1);
+	
+	size_t bWrite = write(file, NULL, 0);
+	if (bWrite < 0) {
+	    printf("error sending measuring request:%s(%d)\n", strerror(errno), errno);
+	    sleep(8);
+	    continue;
+	 }
+
+	sleep(1); // wait for measurement to complete
 
 	// Read 4 bytes of data
 	// humidity msb, humidity lsb, temp msb, temp lsb
